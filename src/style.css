@@ -1,6 +1,425 @@
-body {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-height: 100%;
+}
+
+.header {
+  height: 500px;
+  background-color: #e07a5f;
+  display: flex;
+  justify-content: center;
+}
+
+.header-about {
+  background-color: #f4f1de;
+  margin: 50px;
+  margin-left: 0;
+  margin-top: 100px;
+  height: 300px;
+  width: 550px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 7px black;
+}
+
+.header-lead {
+  color: #707070;
   font-family: sans-serif;
-  background: #f9f9f9;
+  margin: 20px;
+}
+
+.about-text {
+  color: #707070;
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+.about-image {
+  height: 450px;
+  width: 350px;
+  margin: 50px;
+  margin-right: 0;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px black;
+}
+
+.btn-div {
+  height: 40px;
+  width: 120px;
+  display: flex;
+  margin-top: 70px;
+  margin-left: 390px;
+  gap: 14px;
+}
+
+.btn-div button {
+  height: 30px;
+  width: 30px;
+  font-size: 1.5em;
   text-align: center;
-  padding: 2rem;
+  background: none;
+  border: none;
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+}
+
+.btn-div button:hover {
+  transform: scale(1.18);
+}
+
+.main {
+  background-color: #f4f1de;
+  padding: 40px 0;
+}
+
+.main-title {
+  color: #707070;
+  font-size: 2.2em;
+  margin: 0 auto 30px auto;
+  width: fit-content;
+  font-family: sans-serif;
+}
+
+.card {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f1de;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 3px 3px 9px gray;
+}
+
+.card-grid {
+  margin-top: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  justify-content: center;
+  gap: 70px;
+  padding: 20px;
+}
+
+.card-img {
+  height: 200px;
+  width: 300px;
+  border-radius: 5px;
+}
+
+.title {
+  font-size: 2.2em;
+  color: #707070;
+  font-family: sans-serif;
+  margin-right: 120px;
+}
+
+.description {
+  font-size: 1em;
+  color: #707070;
+  font-family: sans-serif;
+  margin: 10px;
+}
+
+.title-div {
+  display: flex;
+  padding: 10px;
+}
+
+.git-btn,
+.share-btn {
+  height: 30px;
+  width: 30px;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.git-btn:hover,
+.share-btn:hover {
+  transform: scale(1.1);
+}
+
+.footer {
+  background-color: #e07a5f;
+  height: 500px;
+  display: flex;
+}
+
+.contact-div {
+  padding: 70px 30px;
+}
+
+.contact-title {
+  color: #3e3e3e;
+  font-family: sans-serif;
+  margin-bottom: 15px;
+}
+
+.contact-des {
+  color: #3e3e3e;
+  font-family: sans-serif;
+  margin-bottom: 15px;
+}
+
+.address {
+  color: #3e3e3e;
+  font-family: sans-serif;
+  margin-bottom: 15px;
+}
+
+.phone-div {
+  color: #3e3e3e;
+  font-family: sans-serif;
+  display: flex;
+  gap: 20px;
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+
+.phone-btn {
+  color: #3e3e3e;
+  background: none;
+  border: none;
+  font-size: 1.2em;
+}
+
+.email-div {
+  color: #3e3e3e;
+  font-family: sans-serif;
+  display: flex;
+  gap: 20px;
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+
+.email-btn {
+  color: #3e3e3e;
+  background: none;
+  border: none;
+  font-size: 1.2em;
+}
+
+.footer-btn-div {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+}
+
+.footer-btn-div button {
+  color: #3e3e3e;
+  background: none;
+  border: none;
+  font-size: 1.9em;
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+}
+
+.footer-btn-div button:hover {
+  transform: scale(1.1);
+}
+
+.footer-img {
+  height: 350px;
+  width: 550px;
+  margin: 20px;
+  margin-top: 60px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px black;
+}
+
+@media (max-width: 500px) {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .header {
+    height: 30%;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .header-about {
+    margin: 10px;
+    margin-left: 50px;
+    height: 600px;
+    width: 650px;
+  }
+
+  .header-lead {
+    margin: 20px;
+    font-size: 3.2em;
+  }
+
+  .about-text {
+    margin: 20px;
+    font-size: 2em;
+  }
+
+  .about-image {
+    height: 800px;
+    width: 650px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px black;
+  }
+
+  .btn-div {
+    height: 60px;
+    width: 220px;
+    display: flex;
+    margin-top: 70px;
+    margin-left: 390px;
+    gap: 40px;
+  }
+
+  .btn-div button {
+    height: 30px;
+    width: 30px;
+    font-size: 2.5em;
+  }
+
+  .main {
+    background-color: #f4f1de;
+    padding: 0;
+    height: 40%;
+    width: 800px;
+    padding: 10px;
+  }
+
+  .main-title {
+    font-size: 4.2em;
+  }
+
+  .card {
+    width: 600px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 3px 3px 9px gray;
+  }
+
+  .card-grid {
+    margin-top: 0;
+    display: grid;
+    grid-template-columns: repeat(1, 600px);
+    justify-content: center;
+    gap: 50px;
+    padding: 0;
+  }
+
+  .card-img {
+    height: 400px;
+    width: 600px;
+    border-radius: 5px;
+  }
+
+  .title {
+    font-size: 3.2em;
+    margin: 20px;
+    margin-right: 280px;
+  }
+
+  .description {
+    font-size: 2.2em;
+    margin: 20px;
+    margin-top: 0;
+  }
+
+  .title-div {
+    display: flex;
+    padding: 10px;
+  }
+
+  .git-btn,
+  .share-btn {
+    font-size: 2.8em;
+    margin-left: 40px;
+    margin-top: 25px;
+  }
+
+  .footer {
+    height: 30%;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    display: flex;
+  }
+
+  .contact-div {
+    padding: 70px 50px;
+  }
+
+  .contact-title {
+    font-size: 3.2em;
+    margin-bottom: 45px;
+  }
+
+  .contact-des {
+    font-size: 2.2em;
+    margin-bottom: 25px;
+  }
+
+  .address {
+    font-size: 2.2em;
+    margin-bottom: 25px;
+  }
+
+  .phone-div {
+    font-size: 2.2em;
+    display: flex;
+    gap: 30px;
+    font-size: 1.2em;
+    margin-top: 50px;
+  }
+
+  .phone-no,
+  .email {
+    color: #3e3e3e;
+    font-size: 2.2em;
+  }
+
+  .phone-btn {
+    font-size: 2.2em;
+  }
+
+  .email-div {
+    gap: 30px;
+    font-size: 1.2em;
+    margin-top: 25px;
+  }
+
+  .email-btn {
+    font-size: 2.2em;
+  }
+
+  .footer-btn-div {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+  }
+
+  .footer-btn-div button {
+    margin-top: 70px;
+    font-size: 3.2em;
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+  }
+
+  .footer-img {
+    height: 800px;
+    width: 650px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px black;
+    margin-left: 65px;
+  }
 }

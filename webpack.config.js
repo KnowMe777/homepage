@@ -5,26 +5,26 @@ import ImageMinimizerPlugin from 'image-minimizer-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ESLintPlugin from 'eslint-webpack-plugin';
 
-// __dirname replacement in ESM
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 export default {
   entry: './src/index.js',
+
   output: {
     filename: 'bundle.[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
+
   module: {
     rules: [
       {
         test: /\.css$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: { publicPath: '' },
-          },
+          isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
           'css-loader',
         ],
       },
@@ -34,16 +34,24 @@ export default {
       },
     ],
   },
+
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: 'index.html',
     }),
-    new MiniCssExtractPlugin({
-      filename: 'styles.[contenthash].css',
-    }),
+
+    ...(isProduction
+      ? [
+          new MiniCssExtractPlugin({
+            filename: 'styles.[contenthash].css',
+          }),
+        ]
+      : []),
+
     new ESLintPlugin(),
   ],
+
   optimization: {
     minimizer: [
       '...',
@@ -74,12 +82,16 @@ export default {
       }),
     ],
   },
+
   devServer: {
     static: './dist',
     port: 3000,
     open: true,
     hot: true,
+    liveReload: true,
   },
-  devtool: 'source-map',
-  mode: 'development',
+
+  devtool: isProduction ? 'source-map' : 'eval-source-map',
+
+  mode: isProduction ? 'production' : 'development',
 };
