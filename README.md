@@ -1,13 +1,7 @@
-# Webpack Boilerplate
+# Homepage website
 
-A ready-to-use Webpack starter template with support for CSS, images, and GitHub Actions.
+This is simple homepage / personal portfolio website
 
-## Getting Started
+# Live Prevew
 
-Clone this boilerplate into a new project using [degit](https://github.com/Rich-Harris/degit):
-
-```bash
-npx degit KnowMe777/webpack-starter my-new-project
-cd my-new-project
-npm install
-```
+Click the link to see the website live. (Live Preview)[https://knowme777.github.io/homepage/]
